@@ -22,37 +22,42 @@ export function SearchButton() {
   }, [isOpen])
 
   return (
-    <div className={cn(
-      "fixed top-4 right-4 flex items-center",
-      isOpen && "border-b-2 border-zinc-950"
-    )}>
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-300 ease-in-out",
-          isOpen ? "w-[320px] opacity-100" : "w-0 opacity-0"
-        )}
-      >
-        <Input
-          ref={inputRef}
-          type="search"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="Search..."
-          className="w-[320px] h-8 border-0 rounded-none focus:ring-0 bg-transparent [&::-webkit-search-cancel-button]:hidden px-0 placeholder:text-zinc-950"
+    <div className="fixed top-0 right-0 p-4">
+      <div className="w-[320px] flex items-center justify-end relative">
+        <div
+          className={cn(
+            "absolute bottom-0 right-0 h-[2px] bg-zinc-950 transition-all duration-300 ease-in-out origin-right",
+            isOpen ? "w-full" : "w-0"
+          )}
         />
+        <div
+          className={cn(
+            "overflow-hidden transition-all duration-300 ease-in-out",
+            isOpen ? "w-[calc(100%-2rem)] opacity-100" : "w-0 opacity-0"
+          )}
+        >
+          <Input
+            ref={inputRef}
+            type="search"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder="Search..."
+            className="w-full h-8 border-0 rounded-none focus:ring-0 bg-transparent [&::-webkit-search-cancel-button]:hidden pl-0 pr-0 placeholder:text-zinc-950"
+          />
+        </div>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setIsOpen(!isOpen)}
+          className="hover:bg-transparent p-0 h-8 w-auto ml-4"
+        >
+          {isOpen ? (
+            <X className="h-4 w-4" />
+          ) : (
+            <Search className="h-4 w-4" />
+          )}
+        </Button>
       </div>
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setIsOpen(!isOpen)}
-        className="hover:bg-transparent p-0 h-8 w-auto ml-2"
-      >
-        {isOpen ? (
-          <X className="h-4 w-4" />
-        ) : (
-          <Search className="h-4 w-4" />
-        )}
-      </Button>
     </div>
   )
 }
