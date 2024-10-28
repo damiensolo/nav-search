@@ -27,7 +27,7 @@ export function SearchButton() {
         <div
           className={cn(
             "absolute bottom-0 right-0 h-[2px] bg-zinc-950 transition-all duration-300 ease-in-out origin-right",
-            isOpen ? "w-full" : "w-0"
+            isOpen ? "w-full opacity-100" : "w-0 opacity-0"
           )}
         />
         <div
@@ -42,7 +42,7 @@ export function SearchButton() {
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search..."
-            className="w-full h-8 border-0 rounded-none focus:ring-0 bg-transparent [&::-webkit-search-cancel-button]:hidden pl-0 pr-0 placeholder:text-zinc-950"
+            className="w-full h-8 border-0 rounded-none focus:ring-0 bg-transparent [&::-webkit-search-cancel-button]:hidden pl-0 pr-0 placeholder:text-zinc-500 font-inter placeholder:font-inter font-normal placeholder:font-normal"
           />
         </div>
         <Button
