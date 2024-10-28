@@ -56,8 +56,9 @@ export function SearchButtonComponent() {
           <Button
             type="button"
             onClick={handleToggle}
-            className="absolute right-0 z-10 h-10 w-10 p-0 rounded-full transition-opacity duration-300 ease-in-out"
+            className="absolute right-0 z-10 h-10 w-10 p-0 rounded-full transition-opacity duration-300 ease-in-out bg-transparent hover:bg-transparent"
             aria-label={isExpanded ? "Close search" : "Search"}
+            variant="ghost"
           >
             {isExpanded ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
           </Button>

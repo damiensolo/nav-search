@@ -12,3 +12,6 @@ Change the functionality of the search component:
 
 <!-- - When the user presses Enter, the search should be performed.
 - When the user clicks on a search result, the user should be redirected to the search result page. -->
+
+<!-- Style -->
+- remove the background color of the search button and make it transparent.
