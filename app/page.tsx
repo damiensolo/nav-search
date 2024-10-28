@@ -1,10 +1,11 @@
-import { SearchButtonComponent } from "@/components/search-button"
+'use client'
 
-export default function Page() {
+import { SearchButton } from '@/components/search-button'
+
+export default function Home() {
   return (
     <main>
-      <SearchButtonComponent />
-      {/* Your main page content goes here */}
+      <SearchButton />
     </main>
   )
 }

@@ -15,3 +15,18 @@ Change the functionality of the search component:
 
 <!-- Style -->
 - remove the background color of the search button and make it transparent.
+- add a 2xp bottom border to the search component.
+- add a bottom border to the entire search component container.
+- When the search component is closed remove the bottom border.
+- the width of the search input should be 320px and the height should be 32px.
+
+
+
+- the search input should not automatically close when the user clicks outside of it.
+- when a user click on the search button the search input should be focused.
+- remove the clear button of the search input.
+- When the user closes the search input the input should be cleared.
+
+
+
+- match the design of the search component to this Search input.png reference image.  
