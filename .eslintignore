@@ -1,0 +1,3 @@
+app/types/next.d.ts
+app/layout.tsx
+components/search-button.tsx
