@@ -21,8 +21,22 @@ export function SearchButton() {
     }
   }, [isOpen])
 
+  const handleSearch = () => {
+    // Implement your search logic here
+    console.log('Performing search for:', searchValue)
+    // Close the search component
+    setIsOpen(false)
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      handleSearch()
+    }
+  }
+
   return (
-    <div className="fixed top-0 right-0 p-4">
+    <div className="fixed top-0 right-4 p-4">
       <div className="w-[320px] flex items-center justify-end relative">
         <div
           className={cn(
@@ -41,6 +55,7 @@ export function SearchButton() {
             type="search"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
+            onKeyDown={handleKeyPress}
             placeholder="Search..."
             className="w-full h-8 border-0 rounded-none focus:ring-0 bg-transparent [&::-webkit-search-cancel-button]:hidden pl-0 pr-0 placeholder:text-zinc-500 font-inter placeholder:font-inter font-normal placeholder:font-normal"
           />
