@@ -57,14 +57,14 @@ export function SearchButton() {
             onChange={(e) => setSearchValue(e.target.value)}
             onKeyDown={handleKeyPress}
             placeholder="Search..."
-            className="w-full h-8 border-0 rounded-none focus:ring-0 bg-transparent [&::-webkit-search-cancel-button]:hidden pl-0 pr-0 placeholder:text-zinc-500 font-inter placeholder:font-inter font-normal placeholder:font-normal"
+            className="w-full h-8 border-0 rounded-none focus:ring-0 bg-transparent [&::-webkit-search-cancel-button]:hidden pl-1 pr-0 placeholder:text-zinc-500 font-inter placeholder:font-inter font-normal placeholder:font-normal"
           />
         </div>
         <Button
           variant="ghost"
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
-          className="hover:bg-transparent p-0 h-8 w-auto ml-4"
+          className="hover:bg-transparent p-0 h-8 w-auto ml-4 pr-1"
         >
           {isOpen ? (
             <X className="h-4 w-4" />
