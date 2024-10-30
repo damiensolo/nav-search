@@ -43,6 +43,7 @@ export function SearchButton() {
             "absolute bottom-0 right-0 h-[2px] bg-zinc-950 transition-all duration-300 ease-in-out origin-right",
             isOpen ? "w-full opacity-100" : "w-0 opacity-0"
           )}
+          aria-hidden="true"
         />
         <div
           className={cn(
@@ -58,6 +59,8 @@ export function SearchButton() {
             onKeyDown={handleKeyPress}
             placeholder="Search..."
             className="w-full h-8 border-0 rounded-none focus:ring-0 bg-transparent [&::-webkit-search-cancel-button]:hidden pl-1 pr-0 placeholder:text-zinc-500 font-inter placeholder:font-inter font-normal placeholder:font-normal"
+            aria-expanded={isOpen}
+            aria-label="Search"
           />
         </div>
         <Button
@@ -65,6 +68,8 @@ export function SearchButton() {
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
           className="hover:bg-transparent p-0 h-8 w-auto ml-4 pr-1"
+          aria-label={isOpen ? "Close search" : "Open search"}
+          aria-expanded={isOpen}
         >
           {isOpen ? (
             <X className="h-4 w-4" />
